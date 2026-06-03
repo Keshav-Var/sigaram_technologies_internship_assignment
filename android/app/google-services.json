@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "906035152931",
+    "project_id": "sigaram-technologies-assignmen",
+    "storage_bucket": "sigaram-technologies-assignmen.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906035152931:android:89e231d40dd2d8362ac996",
+        "android_client_info": {
+          "package_name": "com.example.sigaram_technologies_internship_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcST4_FKQfM1iwMVWlZkclOXiPYohOnc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
