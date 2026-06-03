@@ -1087,21 +1087,25 @@ class _VideoPage extends GetView<HomeController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _iconButton(
-                    icon: controller.getController(index)?.isMuted == true
-                        ? Icons.volume_off
-                        : Icons.volume_up,
-                    label: 'Mute',
-                    onTap: controller.muteUnMute,
-                  ),
+                  Obx(() {
+                    return _iconButton(
+                      icon: controller.isMuted.value
+                          ? Icons.volume_off
+                          : Icons.volume_up,
+                      label: 'Mute',
+                      onTap: controller.muteUnMute,
+                    );
+                  }),
                   const SizedBox(width: 32),
-                  _iconButton(
-                    icon: controller.getController(index)?.isPlaying == true
-                        ? Icons.pause
-                        : Icons.play_arrow,
-                    label: 'Play',
-                    onTap: controller.playPause,
-                  ),
+                  Obx(() {
+                    return _iconButton(
+                      icon: controller.isPlaying.value
+                          ? Icons.pause
+                          : Icons.play_arrow,
+                      label: 'Play',
+                      onTap: controller.playPause,
+                    );
+                  }),
                 ],
               ),
             ),

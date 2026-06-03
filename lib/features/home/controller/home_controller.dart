@@ -311,6 +311,8 @@ class HomeController extends GetxController {
   final FirestoreService _firestore = Get.find<FirestoreService>();
 
   final RxBool isLoading = false.obs;
+  final RxBool isMuted = false.obs;
+  final RxBool isPlaying = false.obs;
   final RxInt currentIndex = 0.obs;
   final RxList<VideoModel> videos = <VideoModel>[].obs;
 
@@ -361,8 +363,10 @@ class HomeController extends GetxController {
     if (ctrl == null) return;
     if (ctrl.isPlaying) {
       ctrl.pause();
+      isPlaying.value = false;
     } else {
       ctrl.play();
+      isPlaying.value = true;
     }
   }
 
@@ -371,6 +375,7 @@ class HomeController extends GetxController {
     if (ctrl == null) return;
     // toggle mute via volume
     ctrl.isMuted ? ctrl.unMute() : ctrl.mute();
+    isMuted.value = ctrl.isMuted;
   }
 
   @override
